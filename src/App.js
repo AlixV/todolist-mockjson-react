@@ -16,12 +16,14 @@ function App() {
       .then((data) => {
         setTasks(data);
       });
-  }, []);
+  }, [tasks]);
 
   const deleteTask = (id) => {
     axios
       .delete("http://localhost:8000/todo/" + id)
-      .then(() => console.log("delete successful"))
+      .then(() => {
+        console.log("delete successful");
+      })
       .catch((e) => console.log(e));
   };
 
