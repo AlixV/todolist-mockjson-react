@@ -1,25 +1,79 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import TodoList from "./components/TodoList";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/todo")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setTasks(data);
+      });
+  }, []);
+
+  const deleteTask = (id) => {
+    axios
+      .delete("http://localhost:8000/todo/" + id)
+      .then(() => console.log("delete successful"))
+      .catch((e) => console.log(e));
+  };
+
+  // deleteTask(id){
+  //   axios
+  //     .delete("http://localhost:8000/todo/{id}")
+  //     .then(()=> console.log("delete successful"))
+  //     .catch((e)=> console.log(e))
+  // }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Form />
+      {/* {tasks && <TodoList tasks={tasks} />} */}
+      {tasks && <TodoList tasks={tasks} deleteTask={deleteTask} />}
     </div>
   );
 }
 
 export default App;
+
+/* 
+
+ // axios
+    //   .get("http://localhost:8000/todo")
+    //   .then(({ data }) => {
+    //     console.log("DATA FROM DB : " + data);
+    //     setTasks(data);
+    //   })
+    //   .catch((e) => console.log(e));
+
+useEffect(()=>{
+  fetch("http://localhost:8000/todo")
+  .then(res=>{
+    return res.json()
+  })
+  .then(data =>{
+    setTasks(data);
+  })
+},[])
+
+
+fetchTaskes()
+ const fetchTasks = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/todo");
+      console.log("api res => ", res);
+      setTasks(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+*/
