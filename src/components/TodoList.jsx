@@ -1,10 +1,6 @@
 import React from "react";
 
-// const TodoList = ({ tasks }) => {
-const TodoList = ({ tasks, deleteTask }) => {
-  // const { tasks } = props;
-  // console.log("Tasks list : " + tasks);
-
+const TodoList = ({ tasks, deleteTask, updateTask }) => {
   return (
     <>
       <h2> My tasks : </h2>
@@ -12,13 +8,15 @@ const TodoList = ({ tasks, deleteTask }) => {
         {tasks.map((task, index) => {
           return (
             <li
-              className="post-it"
+              className={task.complete ? " post-it strike" : "post-it"}
               key={task.id}
               style={{
                 listStyleType: "none",
               }}
             >
               <p>{task.task}</p>
+              <button onClick={() => updateTask(task.id)}>modify</button>
+              {/* <button onClick={() => updateTask(task.id)}>complete</button> */}
               <button onClick={() => deleteTask(task.id)}>delete</button>
             </li>
           );

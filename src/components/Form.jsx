@@ -3,12 +3,13 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [task, setTask] = useState();
+  const [complete, setComplete] = useState();
   const [error, setError] = useState();
 
   const handleSubmit = (e) => {
     // e.preventDefault();
 
-    const newTask = { task };
+    const newTask = { task, complete };
 
     axios
       .post("http://localhost:8000/todo", newTask)
@@ -29,6 +30,7 @@ const Form = () => {
         <h2>Add a task </h2>
         <label htmlFor="task"> Write here : </label>
         <textarea
+          id="task"
           name="task"
           type="textarea"
           rows="5"
@@ -37,6 +39,27 @@ const Form = () => {
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
+
+        <legend> Done ?</legend>
+        <input
+          type="radio"
+          name="complete"
+          id="false"
+          value={complete}
+          onChange={(e) => setComplete(e.target.value)}
+          checked
+        />
+        <label htmlFor="false"> Not yet</label>
+
+        <input
+          type="radio"
+          name="complete"
+          id="true"
+          value={complete}
+          onChange={(e) => setComplete(e.target.value)}
+        />
+        <label htmlFor="true"> Yes</label>
+
         <button type="submit"> Let's go !</button>
         {/* type="submit" useful ? */}
       </form>

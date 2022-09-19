@@ -18,17 +18,6 @@ function App() {
       });
   }, []); // comment surveiller sans infinit loop à l'ouverture
 
-  // const deleteTask = (id) => {
-  //   setTasks(
-  //     axios
-  //       .delete("http://localhost:8000/todo/" + id)
-  //       .then(() => {
-  //         console.log("delete successful");
-  //       })
-  //       .catch((e) => console.log(e))
-  //   );
-  // };
-
   const deleteTask = (id) => {
     axios
       .delete("http://localhost:8000/todo/" + id)
@@ -38,19 +27,35 @@ function App() {
       .catch((e) => console.log(e));
   };
 
-  // deleteTask(id){
+  const updateTask = (id) => {
+    axios
+      .put("http://localhost:8000/todo/" + id)
+      .then(() => {
+        console.log("update successful");
+      })
+      .catch((e) => console.log(e));
+  };
+
+  // const completeTask = (id) => {
   //   axios
-  //     .delete("http://localhost:8000/todo/{id}")
-  //     .then(()=> console.log("delete successful"))
-  //     .catch((e)=> console.log(e))
-  // } = > fonctionne pas du tout
+  //     .put("http://localhost:8000/todo/" + id)
+  //     .then(() => {
+  //       console.log("update successful");
+  //     })
+  //     .catch((e) => console.log(e));
+  // };
 
   return (
     <div className="App">
       <Header />
       <Form />
-      {/* {tasks && <TodoList tasks={tasks} />} */}
-      {tasks && <TodoList tasks={tasks} deleteTask={deleteTask} />}
+      {tasks && (
+        <TodoList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          updateTask={updateTask}
+        />
+      )}
     </div>
   );
 }
@@ -59,6 +64,18 @@ export default App;
 
 /* 
 
+ // const deleteTask = (id) => {
+  //   setTasks(
+  //     axios
+  //       .delete("http://localhost:8000/todo/" + id)
+  //       .then(() => {
+  //         console.log("delete successful");
+  //       })
+  //       .catch((e) => console.log(e))
+  //   );
+  // };
+  //  = > fonctionne pas du tout
+
  // axios
     //   .get("http://localhost:8000/todo")
     //   .then(({ data }) => {
@@ -66,6 +83,7 @@ export default App;
     //     setTasks(data);
     //   })
     //   .catch((e) => console.log(e));
+    // => NON
 
 useEffect(()=>{
   fetch("http://localhost:8000/todo")
