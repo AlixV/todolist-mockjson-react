@@ -31,14 +31,7 @@ const TodoList = ({ tasks, deleteTask }) => {
 export default TodoList;
 
 /* 
-const handleDelete = async (id) => {
-    try {
-      await APIHandler.delete(`/api/cats/${id}`);
-      fetchCats();
-    } catch (err) {
-      console.error(err);
-    }
-  };
+
 
   const handleDelete = 
   async (task.id)=> {

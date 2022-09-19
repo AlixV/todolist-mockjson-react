@@ -96,13 +96,12 @@
       "complete": false
     },
     {
-      "id": 20,
-      "task": "Fill gas tank",
-      "complete": false
-    },
-    {
       "task": "Eat bananas",
       "id": 21
+    },
+    {
+      "task": "Smoke stawberries",
+      "id": 22
     }
   ]
 }

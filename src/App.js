@@ -16,7 +16,18 @@ function App() {
       .then((data) => {
         setTasks(data);
       });
-  }, [tasks]);
+  }, []); // comment surveiller sans infinit loop à l'ouverture
+
+  // const deleteTask = (id) => {
+  //   setTasks(
+  //     axios
+  //       .delete("http://localhost:8000/todo/" + id)
+  //       .then(() => {
+  //         console.log("delete successful");
+  //       })
+  //       .catch((e) => console.log(e))
+  //   );
+  // };
 
   const deleteTask = (id) => {
     axios
@@ -32,7 +43,7 @@ function App() {
   //     .delete("http://localhost:8000/todo/{id}")
   //     .then(()=> console.log("delete successful"))
   //     .catch((e)=> console.log(e))
-  // }
+  // } = > fonctionne pas du tout
 
   return (
     <div className="App">
