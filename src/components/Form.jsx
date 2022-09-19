@@ -1,21 +1,20 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const Form = () => {
-  const [task, setTask] = useState();
-  const [complete, setComplete] = useState();
+const Form = ({ newTask, setNewTask, complete, setComplete }) => {
   const [error, setError] = useState();
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
-    const newTask = { task, complete };
+    const newTaskForm = { task: newTask, complete };
+    console.log(newTaskForm);
 
     axios
-      .post("http://localhost:8000/todo", newTask)
+      .post("http://localhost:8000/todo", newTaskForm)
       .then((res) => {
         console.log(res);
-        setTask("");
+        setNewTask("");
       })
       .catch((e) => {
         console.log(e);
@@ -36,8 +35,8 @@ const Form = () => {
           rows="5"
           cols="15"
           placeholder="your task"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
         />
 
         <legend> Done ?</legend>
@@ -46,8 +45,11 @@ const Form = () => {
           name="complete"
           id="false"
           value={complete}
-          onChange={(e) => setComplete(e.target.value)}
-          checked
+          onChange={(e) => {
+            setComplete(false);
+            console.log("falseCkeckbox : " + e.target.value);
+          }}
+          // checked
         />
         <label htmlFor="false"> Not yet</label>
 
@@ -56,7 +58,10 @@ const Form = () => {
           name="complete"
           id="true"
           value={complete}
-          onChange={(e) => setComplete(e.target.value)}
+          onChange={(e) => {
+            setComplete(true);
+            console.log("trueCkeckbox : " + e.target.value);
+          }}
         />
         <label htmlFor="true"> Yes</label>
 

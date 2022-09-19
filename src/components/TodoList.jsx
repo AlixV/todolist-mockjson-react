@@ -14,6 +14,13 @@ const TodoList = ({ tasks, deleteTask, updateTask }) => {
                 listStyleType: "none",
               }}
             >
+              {/* compo pr chaque tahce, dans state, un boolean qui dit si on mofi et ne fonction afficher 
+
+            rendu contiontionel dans return ternary 
+            moyen de detecter si on a cliquier si oui affciher un input, sinon para
+            garder en memoire dans un state si modfifier ou non
+            qd fini de modifier, repasser à un paragraphe 
+            mettre un on click sur compo entier ? */}
               <p>{task.task}</p>
               <button onClick={() => updateTask(task.id)}>modify</button>
               {/* <button onClick={() => updateTask(task.id)}>complete</button> */}

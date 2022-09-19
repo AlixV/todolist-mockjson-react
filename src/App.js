@@ -7,6 +7,8 @@ import TodoList from "./components/TodoList";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState();
+  const [complete, setComplete] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:8000/todo")
@@ -16,13 +18,20 @@ function App() {
       .then((data) => {
         setTasks(data);
       });
-  }, []); // comment surveiller sans infinit loop à l'ouverture
+  }, [newTask]); // comment surveiller sans infinit loop à l'ouverture
 
   const deleteTask = (id) => {
     axios
       .delete("http://localhost:8000/todo/" + id)
       .then(() => {
         console.log("delete successful");
+        fetch("http://localhost:8000/todo")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            setTasks(data);
+          });
       })
       .catch((e) => console.log(e));
   };
@@ -48,7 +57,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Form />
+      <Form
+        newTask={newTask}
+        setNewTask={setNewTask}
+        complete={complete}
+        setComplete={setComplete}
+      />
       {tasks && (
         <TodoList
           tasks={tasks}
