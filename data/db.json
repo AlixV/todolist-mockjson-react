@@ -71,11 +71,6 @@
       "complete": false
     },
     {
-      "id": 16,
-      "task": "Vacuum floor",
-      "complete": false
-    },
-    {
       "id": 17,
       "task": "Feed cat",
       "complete": true
@@ -95,85 +90,19 @@
       "id": 21
     },
     {
-      "task": "Have a walk on the river side near Paris ",
+      "task": "Sleep on the beach ",
+      "complete": false,
       "id": 22
     },
     {
-      "task": "sleep",
+      "task": "Drink strawberries",
+      "complete": true,
       "id": 23
     },
     {
-      "task": "Coucou à Pauline ",
+      "task": "dress as dinosaur",
+      "complete": true,
       "id": 24
-    },
-    {
-      "task": "coucou flo",
-      "id": 25
-    },
-    {
-      "task": "aller ua bain",
-      "complete": "",
-      "id": 26
-    },
-    {
-      "task": "regarder le ciel",
-      "complete": false,
-      "id": 27
-    },
-    {
-      "task": "dormir vite ",
-      "complete": "false",
-      "id": 28
-    },
-    {
-      "task": "manger ",
-      "complete": "false",
-      "id": 29
-    },
-    {
-      "task": "bvgvg",
-      "complete": "false",
-      "id": 30
-    },
-    {
-      "task": "coucou 1",
-      "complete": "false",
-      "id": 31
-    },
-    {
-      "task": "dormir please",
-      "complete": "false",
-      "id": 32
-    },
-    {
-      "task": "jbuvy",
-      "complete": "false",
-      "id": 33
-    },
-    {
-      "task": "bbkbkbk",
-      "complete": "false",
-      "id": 34
-    },
-    {
-      "task": "babababa",
-      "complete": "false",
-      "id": 35
-    },
-    {
-      "task": "toutou",
-      "complete": true,
-      "id": 36
-    },
-    {
-      "task": "fafaffa",
-      "complete": false,
-      "id": 37
-    },
-    {
-      "task": "fififififi",
-      "complete": true,
-      "id": 38
     }
   ]
 }
