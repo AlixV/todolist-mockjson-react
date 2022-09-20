@@ -1,22 +1,17 @@
 {
   "todo": [
     {
+      "task": "Feed the cat",
       "complete": false,
-      "task": "Feed the cat -- 2",
       "id": 4
     },
     {
+      "task": "Go to the french bakery",
       "complete": false,
-      "task": "Go to Store -- 2",
       "id": 6
     },
     {
-      "complete": true,
-      "task": "Fill the gas tank -- 2",
-      "id": 7
-    },
-    {
-      "task": "Change linens --2",
+      "task": "water plants",
       "complete": false,
       "id": 8
     },
@@ -26,8 +21,8 @@
       "complete": true
     },
     {
+      "complete": false,
       "task": "fly in the sky",
-      "complete": true,
       "id": 10
     },
     {
@@ -46,11 +41,6 @@
       "id": 13
     },
     {
-      "complete": true,
-      "task": "Do laundry -- 2",
-      "id": 15
-    },
-    {
       "complete": false,
       "task": "Feed cat",
       "id": 17
@@ -59,10 +49,6 @@
       "id": 18,
       "task": "Change light bulbs",
       "complete": false
-    },
-    {
-      "task": "coucou aux hiboux",
-      "id": 19
     },
     {
       "task": "Eat bananas",
@@ -85,8 +71,8 @@
       "id": 24
     },
     {
+      "task": "go en Australie ",
       "complete": false,
-      "task": "go en Australie -- 3",
       "id": 25
     }
   ]

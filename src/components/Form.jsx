@@ -26,15 +26,14 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
     <div>
       <form onSubmit={handleSubmit}>
         {error !== "" && <p>{error}</p>}
-        <h2>Add a task </h2>
-        <label htmlFor="task"> Write here : </label>
+        {/* <label htmlFor="task">  : </label> */}
         <textarea
           id="task"
           name="task"
           type="textarea"
           rows="5"
           cols="15"
-          placeholder="your task"
+          placeholder="Add a new task"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
@@ -51,7 +50,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
           }}
           // checked
         />
-        <label htmlFor="false"> Not yet</label>
+        <label htmlFor="false">🟩</label>
 
         <input
           type="radio"
@@ -63,7 +62,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
             console.log("trueCkeckbox : " + e.target.value);
           }}
         />
-        <label htmlFor="true"> Yes</label>
+        <label htmlFor="true">✅</label>
 
         <button type="submit"> Let's go !</button>
         {/* type="submit" useful ? */}

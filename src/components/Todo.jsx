@@ -1,29 +1,31 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { confirmAlert } from "react-confirm-alert";
+import { confirmAlert } from "react-confirm-alert";
 
 const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   const [modifytask, setModifytask] = useState(task);
   const [modifycomplete, setModifycomplete] = useState(complete);
   const [isClicked, setIsClicked] = useState(false);
 
-  //   const submit = () => {
-  //     confirmAlert({
-  //       title: "Confirm to submit",
-  //       message: "Are you sure to do this.",
-  //       buttons: [
-  //         {
-  //           label: "Yes",
-  //           onClick: () => alert("Click Yes"),
-  //         },
-  //         {
-  //           label: "No",
-  //           onClick: () => alert("Click No"),
-  //         },
-  //       ],
-  //     });
-  //   };
+  // --- CONFIRM BOX ---
+  const submit = () => {
+    confirmAlert({
+      title: "Confirm to submit",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => alert("Click Yes"),
+        },
+        {
+          label: "No",
+          onClick: () => alert("Click No"),
+        },
+      ],
+    });
+  };
 
+  // --- MODIFY TASK ---
   const handleModifyTask = (e) => {
     e.preventDefault();
     const modifyTaskForm = { task: modifytask, complete: modifycomplete }; // donner id ?
@@ -44,6 +46,7 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
       .catch((e) => console.log(e));
   };
 
+  // --- MODIFY COMPLETE ---
   const handleModifyComplete = (e) => {
     e.preventDefault();
     const modifyCompleteForm = { complete: !modifycomplete, task: modifytask }; // donner id ?
@@ -63,8 +66,6 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
       })
       .catch((e) => console.log(e));
   };
-
-  //setModifycomplete(!modifycomplete)
 
   return (
     <div className={complete ? " post-it strike" : "post-it"} key={id}>
@@ -93,11 +94,12 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
         {modifycomplete ? "✅" : "🟩"}
       </button>
 
-      {/* <button onClick={() => submit()}>Confirm dialog</button> */}
+      <button onClick={() => submit()}>Confirm box</button>
+      {/* Don't forget to invok the function with () */}
 
       {/* <button onClick={() => updateTask(id)}>modify</button> */}
 
-      <button onClick={() => deleteTask(id)}>❌</button>
+      <button onClick={() => deleteTask(id)}>🗑</button>
     </div>
   );
 };
@@ -115,7 +117,7 @@ export default Todo;
 
 //     compo pr chaque tache, dans state, un boolean qui dit si on modif et en fonction afficher
 //   rendu contiontionel dans return ternary
-//   moyen de detecter si on a cliquier si oui affciher un input, sinon para
+//   moyen de detecter si on a cliquier si oui afficher un input, sinon parag
 //   garder en memoire dans un state si modfifier ou non
 //   qd fini de modifier, repasser à un paragraphe
 //   mettre un on click sur compo entier ?
