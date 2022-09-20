@@ -55,13 +55,49 @@ body{
   /* padding : 3px; */
   margin: 2px;
   /* border-radius: 10px; */
-
-  
 }
 
 .strike{
   text-decoration: line-through;
 }
+
+
+.form-container{
+  display: flex;
+  justify-content: center;
+}
+
+.form-create > textarea{
+  border: 4px dotted #03187C;
+}
+
+
+
+.form-create > button{
+  color: #2c0b8e;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #2c0b8e;
+  background: #fff;
+}
+.form-create > button:hover {
+  background:#2c0b8e ;
+  color: #fff
+}
+
+.form-create > label {
+  display : inline-block;
+  
+}
+
+
+
 /* .App {
   text-align: center;
 }

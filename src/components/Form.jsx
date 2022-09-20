@@ -38,7 +38,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
           onChange={(e) => setNewTask(e.target.value)}
         />
 
-        <legend> Done ?</legend>
+        <legend>Done ?</legend>
         <input
           type="radio"
           name="complete"
@@ -62,7 +62,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
           }}
         />
         <label htmlFor="true">✅</label>
-
+        <br />
         <button type="submit"> Let's go !</button>
         {/* type="submit" useful ? */}
       </form>
