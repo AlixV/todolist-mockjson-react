@@ -1,39 +1,24 @@
 {
   "todo": [
     {
-      "id": 2,
-      "task": "Do laundry",
-      "complete": true
+      "complete": false,
+      "task": "Feed the cat -- 2",
+      "id": 4
     },
     {
-      "id": 3,
-      "task": "Vacuum floor",
-      "complete": false
+      "complete": false,
+      "task": "Go to Store -- 2",
+      "id": 6
     },
     {
-      "id": 4,
-      "task": "Feed cat",
-      "complete": true
+      "complete": true,
+      "task": "Fill the gas tank -- 2",
+      "id": 7
     },
     {
-      "id": 5,
-      "task": "Change light bulbs",
-      "complete": false
-    },
-    {
-      "id": 6,
-      "task": "Go to Store",
-      "complete": true
-    },
-    {
-      "id": 7,
-      "task": "Fill gas tank",
-      "complete": true
-    },
-    {
-      "id": 8,
-      "task": "Change linens",
-      "complete": false
+      "task": "Change linens --2",
+      "complete": false,
+      "id": 8
     },
     {
       "id": 9,
@@ -41,9 +26,9 @@
       "complete": true
     },
     {
-      "id": 10,
-      "task": "Bake Cookies",
-      "complete": false
+      "task": "fly in the sky",
+      "complete": true,
+      "id": 10
     },
     {
       "id": 11,
@@ -56,24 +41,19 @@
       "complete": true
     },
     {
-      "id": 13,
+      "complete": false,
       "task": "Exercise",
-      "complete": false
+      "id": 13
     },
     {
-      "id": 14,
-      "task": "Give dog a bath",
-      "complete": false
+      "complete": true,
+      "task": "Do laundry -- 2",
+      "id": 15
     },
     {
-      "id": 15,
-      "task": "Do laundry",
-      "complete": false
-    },
-    {
-      "id": 17,
+      "complete": false,
       "task": "Feed cat",
-      "complete": true
+      "id": 17
     },
     {
       "id": 18,
@@ -81,12 +61,12 @@
       "complete": false
     },
     {
-      "id": 19,
-      "task": "Go to Store",
-      "complete": false
+      "task": "coucou aux hiboux",
+      "id": 19
     },
     {
       "task": "Eat bananas",
+      "complete": false,
       "id": 21
     },
     {
@@ -95,14 +75,19 @@
       "id": 22
     },
     {
-      "task": "Drink strawberries",
       "complete": true,
+      "task": "Drink strawberries",
       "id": 23
     },
     {
+      "complete": false,
       "task": "dress as dinosaur",
-      "complete": true,
       "id": 24
+    },
+    {
+      "complete": false,
+      "task": "go en Australie -- 3",
+      "id": 25
     }
   ]
 }

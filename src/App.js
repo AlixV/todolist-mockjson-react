@@ -10,6 +10,9 @@ function App() {
   const [newTask, setNewTask] = useState();
   const [complete, setComplete] = useState(false);
 
+  // const [modifytask, setModifytask] = useState();
+  // const [modifycomplete, setModifycomplete] = useState();
+
   useEffect(() => {
     fetch("http://localhost:8000/todo")
       .then((res) => {
@@ -18,7 +21,7 @@ function App() {
       .then((data) => {
         setTasks(data);
       });
-  }, [newTask]); // comment surveiller sans infinit loop à l'ouverture
+  }, [newTask]);
 
   const deleteTask = (id) => {
     axios
@@ -36,14 +39,14 @@ function App() {
       .catch((e) => console.log(e));
   };
 
-  const updateTask = (id) => {
-    axios
-      .put("http://localhost:8000/todo/" + id)
-      .then(() => {
-        console.log("update successful");
-      })
-      .catch((e) => console.log(e));
-  };
+  // const updateTask = (id) => {
+  //   axios
+  //     .put("http://localhost:8000/todo/" + id)
+  //     .then(() => {
+  //       console.log("update successful");
+  //     })
+  //     .catch((e) => console.log(e));
+  // };
 
   // const completeTask = (id) => {
   //   axios
@@ -64,11 +67,7 @@ function App() {
         setComplete={setComplete}
       />
       {tasks && (
-        <TodoList
-          tasks={tasks}
-          deleteTask={deleteTask}
-          updateTask={updateTask}
-        />
+        <TodoList tasks={tasks} setTasks={setTasks} deleteTask={deleteTask} />
       )}
     </div>
   );

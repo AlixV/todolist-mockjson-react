@@ -1,12 +1,13 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ tasks, deleteTask, updateTask }) => {
-  // const { tasks, deleteTask, updateTask } = props;
+const TodoList = ({ tasks, setTasks, deleteTask }) => {
+  
   return (
     <>
       <h2> My tasks : </h2>
-      {/* {tasks ? (  */}
+     
+      {/* {tasks.length > 0 ? (  */}
       <div className="post-it-list">
         {tasks.map((onetask,i) => {
           return (
@@ -15,10 +16,9 @@ const TodoList = ({ tasks, deleteTask, updateTask }) => {
               task = {onetask.task}
               complete ={onetask.complete}
               id = {onetask.id}
-
-              tasks={tasks}
               deleteTask={deleteTask}
-              updateTask={updateTask}
+              tasks={tasks}
+              setTasks={setTasks}
             />
             
           );
