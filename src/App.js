@@ -10,6 +10,7 @@ function App() {
   const [newTask, setNewTask] = useState();
   const [complete, setComplete] = useState(false);
 
+  // --- GET ALL TASKS---
   useEffect(() => {
     fetch("http://localhost:8000/todo")
       .then((res) => {
@@ -20,6 +21,7 @@ function App() {
       });
   }, [newTask]);
 
+  // --- DELETE A TASK ---
   const deleteTask = (id) => {
     axios
       .delete("http://localhost:8000/todo/" + id)

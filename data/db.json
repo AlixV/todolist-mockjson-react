@@ -1,54 +1,14 @@
 {
   "todo": [
     {
-      "task": "Feed the cat",
-      "complete": false,
-      "id": 4
-    },
-    {
-      "task": "Go to the french bakery",
-      "complete": false,
-      "id": 6
-    },
-    {
-      "task": "water plants",
-      "complete": false,
-      "id": 8
-    },
-    {
-      "id": 9,
-      "task": "Rake leaves",
-      "complete": true
-    },
-    {
-      "complete": false,
-      "task": "fly in the sky",
-      "id": 10
-    },
-    {
-      "id": 11,
-      "task": "Take nap",
-      "complete": true
-    },
-    {
       "id": 12,
       "task": "Read book",
       "complete": true
     },
     {
-      "complete": false,
-      "task": "Exercise",
-      "id": 13
-    },
-    {
-      "complete": false,
-      "task": "Feed cat",
-      "id": 17
-    },
-    {
-      "id": 18,
+      "complete": true,
       "task": "Change light bulbs",
-      "complete": false
+      "id": 18
     },
     {
       "task": "Eat bananas",

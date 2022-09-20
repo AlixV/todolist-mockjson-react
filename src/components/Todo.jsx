@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { confirmAlert } from "react-confirm-alert";
+// import { confirmAlert } from "react-confirm-alert"; ESSAI 1
+// import { confirm } from "react-confirm-box";
 
 const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   const [modifytask, setModifytask] = useState(task);
@@ -8,24 +9,46 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   // --- CONFIRM BOX ---
-  const submit = () => {
-    confirmAlert({
-      title: "Confirm to submit",
-      message: "Are you sure to do this.",
-      buttons: [
-        {
-          label: "Yes",
-          onClick: () => alert("Click Yes"),
-        },
-        {
-          label: "No",
-          onClick: () => alert("Click No"),
-        },
-      ],
-    });
-  };
+  // const optionsWithLabelChange = {
+  //   closeOnOverlayClick: false,
+  //   labels: {
+  //     confirmable: "Confirm",
+  //     cancellable: "Cancel"
+  //   }
+  // };
 
-  // --- MODIFY TASK ---
+  // const optionsWithClonOnOverlayclick = {
+  //   closeOnOverlayClick: true
+  // };
+
+  // const customRender = {
+  //   render: (message, onConfirm, onCancel) => {
+  //     return (
+  //       <>
+  //         <h1> Replace with {message} </h1>
+  //         <button onClick={onConfirm}> Yes </button>
+  //       </>
+  //     );
+  //   }
+  // };
+  // const submit = () => {
+  //   confirmAlert({
+  //     title: "Confirm to submit",
+  //     message: "Are you sure to do this ?",
+  //     buttons: [
+  //       {
+  //         label: "Yes",
+  //         onClick: () => alert("Click Yes"),
+  //       },
+  //       {
+  //         label: "No",
+  //         onClick: () => alert("Click No"),
+  //       },
+  //     ],
+  //   });
+  // };
+
+  // --- MODIFY A TASK ---
   const handleModifyTask = (e) => {
     e.preventDefault();
     const modifyTaskForm = { task: modifytask, complete: modifycomplete }; // donner id ?
@@ -54,7 +77,7 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
     axios
       .put("http://localhost:8000/todo/" + id, modifyCompleteForm) // patch ?
       .then(() => {
-        console.log("update done");
+        console.log("update ok");
         setModifycomplete(!modifycomplete);
         fetch("http://localhost:8000/todo")
           .then((res) => {
@@ -68,7 +91,7 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   };
 
   return (
-    <div className={complete ? " post-it strike" : "post-it"} key={id}>
+    <div className={complete ? " post-it strike" : "post-it"}>
       {isClicked ? (
         <form onSubmit={handleModifyTask}>
           <textarea
@@ -94,10 +117,8 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
         {modifycomplete ? "✅" : "🟩"}
       </button>
 
-      <button onClick={() => submit()}>Confirm box</button>
-      {/* Don't forget to invok the function with () */}
-
-      {/* <button onClick={() => updateTask(id)}>modify</button> */}
+      {/* <button onClick={() => submit()}>Confirm box</button> */}
+      {/* ! Don't forget () to invok the function  */}
 
       <button onClick={() => deleteTask(id)}>🗑</button>
     </div>
@@ -105,6 +126,8 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
 };
 
 export default Todo;
+
+//   /* <button onClick={() => updateTask(id)}>modify</button> */
 
 // { task, complete, id, deleteTask, updateTask }
 

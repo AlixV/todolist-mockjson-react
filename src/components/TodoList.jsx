@@ -2,25 +2,23 @@ import React from "react";
 import Todo from "./Todo";
 
 const TodoList = ({ tasks, setTasks, deleteTask }) => {
-  
   return (
     <>
       <h2> My tasks : </h2>
-     
+
       {/* {tasks.length > 0 ? (  */}
       <div className="post-it-list">
-        {tasks.map((onetask,i) => {
+        {tasks.map((onetask) => {
           return (
-            <Todo 
-              key={i}
-              task = {onetask.task}
-              complete ={onetask.complete}
-              id = {onetask.id}
+            <Todo
+              key={onetask.id}
+              task={onetask.task}
+              complete={onetask.complete}
+              id={onetask.id}
               deleteTask={deleteTask}
               tasks={tasks}
               setTasks={setTasks}
             />
-            
           );
         })}
       </div>

@@ -4,12 +4,11 @@ import React, { useState } from "react";
 const Form = ({ newTask, setNewTask, complete, setComplete }) => {
   const [error, setError] = useState();
 
+  // --- CREATE A TASK ---
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newTaskForm = { task: newTask, complete };
     console.log(newTaskForm);
-
     axios
       .post("http://localhost:8000/todo", newTaskForm)
       .then((res) => {
