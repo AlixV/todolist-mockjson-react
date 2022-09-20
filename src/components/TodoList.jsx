@@ -6,25 +6,25 @@ const TodoList = ({ tasks, setTasks, deleteTask }) => {
     <>
       <h2> My tasks : </h2>
 
-      {/* {tasks.length > 0 ? (  */}
-      <div className="post-it-list">
-        {tasks.map((onetask) => {
-          return (
-            <Todo
-              key={onetask.id}
-              task={onetask.task}
-              complete={onetask.complete}
-              id={onetask.id}
-              deleteTask={deleteTask}
-              tasks={tasks}
-              setTasks={setTasks}
-            />
-          );
-        })}
-      </div>
-      {/* ):(
-        <p> No task, well done <p>
-      )} */}
+      {tasks.length > 0 ? (
+        <div className="post-it-list">
+          {tasks.map((onetask) => {
+            return (
+              <Todo
+                key={onetask.id}
+                task={onetask.task}
+                complete={onetask.complete}
+                id={onetask.id}
+                deleteTask={deleteTask}
+                tasks={tasks}
+                setTasks={setTasks}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <p> No task, well done </p>
+      )}
     </>
   );
 };

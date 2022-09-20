@@ -1,39 +1,44 @@
 {
   "todo": [
     {
-      "id": 12,
-      "task": "Read book",
-      "complete": true
-    },
-    {
-      "complete": true,
-      "task": "Change light bulbs",
-      "id": 18
-    },
-    {
       "task": "Eat bananas",
-      "complete": false,
-      "id": 21
-    },
-    {
-      "task": "Sleep on the beach ",
-      "complete": false,
-      "id": 22
+      "complete": true,
+      "id": 1
     },
     {
       "complete": true,
-      "task": "Drink strawberries",
-      "id": 23
+      "task": "Go to the library ",
+      "id": 2
     },
     {
+      "task": "Call Granny",
       "complete": false,
-      "task": "dress as dinosaur",
-      "id": 24
+      "id": 3
     },
     {
-      "task": "go en Australie ",
+      "task": "Dress as a dragon",
       "complete": false,
-      "id": 25
+      "id": 4
+    },
+    {
+      "complete": true,
+      "task": "Buy vegetables ",
+      "id": 5
+    },
+    {
+      "task": "Sleep on the beach during Summer",
+      "complete": false,
+      "id": 6
+    },
+    {
+      "task": "Drink strawberries ",
+      "complete": false,
+      "id": 7
+    },
+    {
+      "task": "Feed Figaro",
+      "complete": false,
+      "id": 8
     }
   ]
 }

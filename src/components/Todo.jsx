@@ -1,52 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { confirmAlert } from "react-confirm-alert"; ESSAI 1
-// import { confirm } from "react-confirm-box";
 
 const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   const [modifytask, setModifytask] = useState(task);
   const [modifycomplete, setModifycomplete] = useState(complete);
   const [isClicked, setIsClicked] = useState(false);
-
-  // --- CONFIRM BOX ---
-  // const optionsWithLabelChange = {
-  //   closeOnOverlayClick: false,
-  //   labels: {
-  //     confirmable: "Confirm",
-  //     cancellable: "Cancel"
-  //   }
-  // };
-
-  // const optionsWithClonOnOverlayclick = {
-  //   closeOnOverlayClick: true
-  // };
-
-  // const customRender = {
-  //   render: (message, onConfirm, onCancel) => {
-  //     return (
-  //       <>
-  //         <h1> Replace with {message} </h1>
-  //         <button onClick={onConfirm}> Yes </button>
-  //       </>
-  //     );
-  //   }
-  // };
-  // const submit = () => {
-  //   confirmAlert({
-  //     title: "Confirm to submit",
-  //     message: "Are you sure to do this ?",
-  //     buttons: [
-  //       {
-  //         label: "Yes",
-  //         onClick: () => alert("Click Yes"),
-  //       },
-  //       {
-  //         label: "No",
-  //         onClick: () => alert("Click No"),
-  //       },
-  //     ],
-  //   });
-  // };
 
   // --- MODIFY A TASK ---
   const handleModifyTask = (e) => {
@@ -91,68 +49,65 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   };
 
   return (
-    <div className={complete ? " post-it strike" : "post-it"}>
-      {isClicked ? (
-        <form onSubmit={handleModifyTask}>
-          <textarea
-            id="task"
-            name="task"
-            type="textarea"
-            rows="5"
-            cols="15"
-            placeholder={task}
-            value={modifytask}
-            onChange={(e) => setModifytask(e.target.value)}
-          />
+    <div className="post-it">
+      {/* className={complete ? " post-it strike" : "post-it"} */}
+      <div>
+        {isClicked ? (
+          <form onSubmit={handleModifyTask}>
+            <textarea
+              id="task"
+              name="task"
+              type="textarea"
+              rows="5"
+              cols="15"
+              placeholder={task}
+              value={modifytask}
+              onChange={(e) => setModifytask(e.target.value)}
+            />
 
-          <button type="submit"> good !</button>
-        </form>
-      ) : (
-        <p> {task}</p>
-      )}
+            <button className="button-form-modify" type="submit">
+              {" "}
+              good !
+            </button>
+          </form>
+        ) : (
+          <p className={complete ? "strike" : ""}> {task}</p>
+        )}
+      </div>
 
-      <button onClick={() => setIsClicked(!isClicked)}>🖌</button>
+      <div className="container-buttons-todo">
+        <button
+          className="buttons-todo button-modify-task"
+          onClick={() => setIsClicked(!isClicked)}
+        >
+          🖌
+        </button>
 
-      <button onClick={(e) => handleModifyComplete(e)}>
-        {modifycomplete ? "✅" : "🟩"}
-      </button>
+        <button
+          className="buttons-todo button-modify-complete"
+          onClick={(e) => handleModifyComplete(e)}
+        >
+          {modifycomplete ? "✅" : "🟩"}
+        </button>
 
-      {/* <button onClick={() => submit()}>Confirm box</button> */}
-      {/* ! Don't forget () to invok the function  */}
-
-      <button onClick={() => deleteTask(id)}>🗑</button>
+        {/* -- CONFIRM BOX-- */}
+        <button
+          className="buttons-todo button-delete"
+          onClick={() => {
+            console.log("I have been clicked");
+            if (window.confirm("Are you sure you want to do that Alix?"))
+              deleteTask(id);
+          }}
+        >
+          🗑
+        </button>
+      </div>
     </div>
   );
 };
 
 export default Todo;
 
-//   /* <button onClick={() => updateTask(id)}>modify</button> */
-
-// { task, complete, id, deleteTask, updateTask }
-
-//   <div className={complete ? " post-it strike" : "post-it"} key={id}>
-//       <p>{task}</p>
-//       <button onClick={() => updateTask(id)}>modify</button>
-//       //<button onClick={() => updateTask(task.id)}>complete</button>
-//       <button onClick={() => deleteTask(id)}>delete</button>
-//     </div>
-
-//     compo pr chaque tache, dans state, un boolean qui dit si on modif et en fonction afficher
-//   rendu contiontionel dans return ternary
-//   moyen de detecter si on a cliquier si oui afficher un input, sinon parag
-//   garder en memoire dans un state si modfifier ou non
-//   qd fini de modifier, repasser à un paragraphe
-//   mettre un on click sur compo entier ?
-
-//   return (
-//     <div
-//       className={task.complete ? " post-it strike" : "post-it"}
-//       key={task.id}
-//     >
-//       <p>{task.task}</p>
-//       <button onClick={() => updateTask(task.id)}>modify</button>
-//       // <button onClick={() => updateTask(task.id)}>complete</button>
-//       <button onClick={() => deleteTask(task.id)}>delete</button>
-//     </div>
-//   );
+// TEST 2 Warning: ReactDOM.render is no longer supported in React 18.
+//Use createRoot instead. Until you switch to the new API,
+//your app will behave as if it's running React 17.

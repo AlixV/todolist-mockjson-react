@@ -1,3 +1,67 @@
+html,
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.header{
+  background-color:  #03187C;
+  color:white;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-align: center;
+
+}
+
+.post-it-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap :wrap;
+  justify-content: space-around;
+ 
+  
+}
+
+.post-it{
+  /* background-color: #FFF1BD; */
+  border-radius: 0px 0px 10px 0px;
+  border: 2px solid #eee;
+  box-shadow: 2px 2px 10px 0 #eee;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 175px;
+  height: 175px;
+  margin: 10px ;
+  position :relative;
+}
+
+.container-buttons-todo{
+  /* display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end; */
+  position : absolute;
+  bottom:0px;
+  right:0px;
+
+  
+}
+
+.buttons-todo{
+  background-color:white;
+  border : none;
+  /* border : 1px solid #03187C; */
+  /* padding : 3px; */
+  margin: 2px;
+  /* border-radius: 10px; */
+
+  
+}
+
+.strike{
+  text-decoration: line-through;
+}
 /* .App {
   text-align: center;
 }
@@ -37,6 +101,4 @@
   }
 } */
 
-.strike{
-  text-decoration: line-through;
-}
+

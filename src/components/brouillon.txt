@@ -70,6 +70,126 @@ fetchTaskes()
 */
 
 
+--- TODO ---
+
+- - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - -
+
+
+// --- CONFIRM BOX ---
+// import { confirmAlert } from "react-confirm-alert"; TRY 1
+// import { confirm } from "react-confirm-box"; // TRY 2
+
+  // ---- TRY 1 : ----
+  // const submit = () => {
+  //   confirmAlert({
+  //     title: "Confirm to submit",
+  //     message: "Are you sure to do this ?",
+  //     buttons: [
+  //       {
+  //         label: "Yes",
+  //         onClick: () => deleteTask(id)
+  //       },
+  //       {
+  //         label: "No",
+  //         onClick: () => console.log("cancel delete box")
+  //       },
+  //     ],
+  //   });
+  // };
+
+  // ---- TEST 2 ----
+  // const optionsWithLabelChange = {
+  //   closeOnOverlayClick: false,
+  //   labels: {
+  //     confirmable: "Confirm",
+  //     cancellable: "Cancel",
+  //   },
+  // };
+
+  // const optionsWithClonOnOverlayclick = {
+  //   closeOnOverlayClick: true
+  // };
+
+  // const customRender = {
+  //   render: (message, onConfirm, onCancel) => {
+  //     return (
+  //       <>
+  //         <h1> Replace with {message} </h1>
+  //         <button onClick={onConfirm}> Yes </button>
+  //       </>
+  //     );
+  //   },
+  // };
+
+  // const onClick = async (options) => {
+  //   const result = await confirm("Are you sure?", options);
+  //   if (result) {
+  //     console.log("You click yes!");
+  //     return;
+  //   }
+  //   console.log("You click No!");
+  // };
+
+  // ---- TEST 3 ----
+
+  // const testConfirm = () => {
+  //   console.log("ça fonctionne");
+  // };
+
+  // onClick={() => { window.confirm( 'Are you sure you want to delete this Card?', ) && deleteTask(id) }}
+
+
+  {/* <button onClick={() => deleteTask(id)}>🗑</button> */}
+
+      {/* <button onClick={() => submit()}>Confirm box</button> */}
+      {/* ! Don't forget () to invok the function  */}
+
+      {/* 
+      --- TEST 2 -- 
+      <div>
+        <button
+          onClick={() => {
+            onClick(optionsWithLabelChange);
+          }}
+        >
+          Click
+        </button>
+      </div> */}
+
+- - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - -
+//   /* <button onClick={() => updateTask(id)}>modify</button> */
+
+// { task, complete, id, deleteTask, updateTask }
+
+//   <div className={complete ? " post-it strike" : "post-it"} key={id}>
+//       <p>{task}</p>
+//       <button onClick={() => updateTask(id)}>modify</button>
+//       //<button onClick={() => updateTask(task.id)}>complete</button>
+//       <button onClick={() => deleteTask(id)}>delete</button>
+//     </div>
+
+//     compo pr chaque tache, dans state, un boolean qui dit si on modif et en fonction afficher
+//   rendu contiontionel dans return ternary
+//   moyen de detecter si on a cliquier si oui afficher un input, sinon parag
+//   garder en memoire dans un state si modfifier ou non
+//   qd fini de modifier, repasser à un paragraphe
+//   mettre un on click sur compo entier ?
+
+//   return (
+//     <div
+//       className={task.complete ? " post-it strike" : "post-it"}
+//       key={task.id}
+//     >
+//       <p>{task.task}</p>
+//       <button onClick={() => updateTask(task.id)}>modify</button>
+//       // <button onClick={() => updateTask(task.id)}>complete</button>
+//       <button onClick={() => deleteTask(task.id)}>delete</button>
+//     </div>
+//   );
+
+
 --- TODOLIST --- 
 
  {/* // <button onClick={() => updateTask(task.id)}>complete</button>  */}

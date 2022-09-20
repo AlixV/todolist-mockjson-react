@@ -22,16 +22,17 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="form-container">
+      <form className="form-create" onSubmit={handleSubmit}>
         {error !== "" && <p>{error}</p>}
         {/* <label htmlFor="task">  : </label> */}
         <textarea
+          className="textarea-form-create"
           id="task"
           name="task"
           type="textarea"
-          rows="5"
-          cols="15"
+          rows="8"
+          cols="20"
           placeholder="Add a new task"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
@@ -47,7 +48,6 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
             setComplete(false);
             console.log("falseCkeckbox : " + e.target.value);
           }}
-          // checked
         />
         <label htmlFor="false">🟩</label>
 
