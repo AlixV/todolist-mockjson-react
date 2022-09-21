@@ -40,6 +40,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
 
         <legend>Done ?</legend>
         <input
+          className="form-create-radio-input"
           type="radio"
           name="complete"
           id="false"
@@ -49,9 +50,12 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
             console.log("falseCkeckbox : " + e.target.value);
           }}
         />
-        <label htmlFor="false">🟩</label>
+        <label htmlFor="false">
+          <i className="fa-regular fa-square"></i>
+        </label>
 
         <input
+          className="form-create-radio-input"
           type="radio"
           name="complete"
           id="true"
@@ -61,7 +65,9 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
             console.log("trueCkeckbox : " + e.target.value);
           }}
         />
-        <label htmlFor="true">✅</label>
+        <label htmlFor="true">
+          <i className="fa-regular fa-square-check"></i>
+        </label>
         <br />
         <button type="submit"> Let's go !</button>
         {/* type="submit" useful ? */}

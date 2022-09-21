@@ -2,6 +2,7 @@ html,
 body{
     margin: 0;
     padding: 0;
+    font-family: Arial, Verdana, Tahoma, sans-serif;
     
 }
 
@@ -22,6 +23,32 @@ body{
  
   
 }
+
+.button-form-modify{
+  color: #2c0b8e;
+  padding: 4px 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* position: relative;
+  display: inline-block; */
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #2c0b8e;
+  background: #fff;
+}
+
+.button-form-modify:hover{
+  background:#2c0b8e ;
+  color: #fff
+}
+
+.form-modify > textarea {
+  border-color: #03187C;
+  font-family:Verdana, Arial, Tahoma, sans-serif;
+}
+
+
 
 .post-it{
   /* background-color: #FFF1BD; */
@@ -44,8 +71,6 @@ body{
   position : absolute;
   bottom:0px;
   right:0px;
-
-  
 }
 
 .buttons-todo{
@@ -69,9 +94,8 @@ body{
 
 .form-create > textarea{
   border: 4px dotted #03187C;
+  font-family:Verdana, Arial, Tahoma, sans-serif;
 }
-
-
 
 .form-create > button{
   color: #2c0b8e;
@@ -91,11 +115,20 @@ body{
   color: #fff
 }
 
-.form-create > label {
-  display : inline-block;
-  
+i {
+  color :#03187C
 }
 
+/* .form-create > label {
+  display : inline-block;
+  
+} */
+
+
+/* .form-create-radio-input{
+border : 5px solid #2c0b8e;
+  
+} */
 
 
 /* .App {

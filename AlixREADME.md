@@ -12,3 +12,7 @@ DELETE
 PUT
 
 -> I choose json-server package
+
+To run the app :
+npm run start
+npm run server

@@ -53,7 +53,7 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
       {/* className={complete ? " post-it strike" : "post-it"} */}
       <div>
         {isClicked ? (
-          <form onSubmit={handleModifyTask}>
+          <form className="form-modify" onSubmit={handleModifyTask}>
             <textarea
               id="task"
               name="task"
@@ -87,7 +87,11 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
           className="buttons-todo button-modify-complete"
           onClick={(e) => handleModifyComplete(e)}
         >
-          {modifycomplete ? "✅" : "🟩"}
+          {modifycomplete ? (
+            <i className="fa-regular fa-square-check"></i>
+          ) : (
+            <i className="fa-regular fa-square"></i>
+          )}
         </button>
 
         {/* -- CONFIRM BOX-- */}
