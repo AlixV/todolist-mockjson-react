@@ -57,7 +57,7 @@ const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
               id="task"
               name="task"
               type="textarea"
-              rows="5"
+              rows="6"
               cols="15"
               placeholder={task}
               value={modifytask}
