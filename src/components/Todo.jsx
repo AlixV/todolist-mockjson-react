@@ -79,7 +79,7 @@ const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
           className="buttons-todo button-modify-task"
           onClick={() => setIsClicked(!isClicked)}
         >
-          <span>
+          <span className="icon-post-it">
             <i className="fa-solid fa-pencil"></i>
           </span>
         </button>
@@ -89,9 +89,13 @@ const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
           onClick={(e) => handleModifyComplete(e)}
         >
           {modifycomplete ? (
-            <i className="fa-regular fa-square-check"></i>
+            <span className="icon-post-it">
+              <i className="fa-regular fa-square-check"></i>
+            </span>
           ) : (
-            <i className="fa-regular fa-square"></i>
+            <span className="icon-post-it">
+              <i className="fa-regular fa-square"></i>
+            </span>
           )}
         </button>
 
@@ -104,7 +108,7 @@ const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
               deleteTask(id);
           }}
         >
-          <span>
+          <span className="icon-post-it">
             <i className="fa-solid fa-trash-can"></i>
           </span>
         </button>

@@ -53,7 +53,9 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
               }}
             />
             <label htmlFor="false">
-              <i className="fa-regular fa-square"></i>
+              <span className="icon-post-it">
+                <i className="fa-regular fa-square"></i>
+              </span>
             </label>
 
             <input
@@ -68,7 +70,9 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
               }}
             />
             <label htmlFor="true">
-              <i className="fa-regular fa-square-check"></i>
+              <span className="icon-post-it">
+                <i className="fa-regular fa-square-check"></i>
+              </span>
             </label>
           </div>
         </div>
