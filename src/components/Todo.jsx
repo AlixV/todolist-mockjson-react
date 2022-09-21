@@ -100,7 +100,7 @@ const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
           className="buttons-todo button-delete"
           onClick={() => {
             console.log("I have been clicked");
-            if (window.confirm("Are you sure you want to do that Alix?"))
+            if (window.confirm("Are you sure about remove this task ?"))
               deleteTask(id);
           }}
         >

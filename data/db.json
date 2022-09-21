@@ -39,6 +39,11 @@
       "task": "Feed Figaro",
       "complete": false,
       "id": 8
+    },
+    {
+      "task": "Go to the new garden this week-end",
+      "complete": false,
+      "id": 9
     }
   ]
 }
