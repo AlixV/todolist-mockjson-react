@@ -25,7 +25,6 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
     <div className="form-container">
       <form className="form-create" onSubmit={handleSubmit}>
         {error !== "" && <p>{error}</p>}
-        {/* <label htmlFor="task">  : </label> */}
         <textarea
           className="textarea-form-create"
           id="task"
@@ -38,39 +37,43 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
           onChange={(e) => setNewTask(e.target.value)}
         />
 
-        <legend>Done ?</legend>
-        <input
-          className="form-create-radio-input"
-          type="radio"
-          name="complete"
-          id="false"
-          value={complete}
-          onChange={(e) => {
-            setComplete(false);
-            console.log("falseCkeckbox : " + e.target.value);
-          }}
-        />
-        <label htmlFor="false">
-          <i className="fa-regular fa-square"></i>
-        </label>
+        <div className="form-create-radio-and-legend">
+          <legend>already done ?</legend>
 
-        <input
-          className="form-create-radio-input"
-          type="radio"
-          name="complete"
-          id="true"
-          value={complete}
-          onChange={(e) => {
-            setComplete(true);
-            console.log("trueCkeckbox : " + e.target.value);
-          }}
-        />
-        <label htmlFor="true">
-          <i className="fa-regular fa-square-check"></i>
-        </label>
+          <div className="form-create-radio">
+            <input
+              className="form-create-radio-input"
+              type="radio"
+              name="complete"
+              id="false"
+              value={complete}
+              onChange={(e) => {
+                setComplete(false);
+                console.log("falseCkeckbox : " + e.target.value);
+              }}
+            />
+            <label htmlFor="false">
+              <i className="fa-regular fa-square"></i>
+            </label>
+
+            <input
+              className="form-create-radio-input"
+              type="radio"
+              name="complete"
+              id="true"
+              value={complete}
+              onChange={(e) => {
+                setComplete(true);
+                console.log("trueCkeckbox : " + e.target.value);
+              }}
+            />
+            <label htmlFor="true">
+              <i className="fa-regular fa-square-check"></i>
+            </label>
+          </div>
+        </div>
         <br />
         <button type="submit"> Let's go !</button>
-        {/* type="submit" useful ? */}
       </form>
     </div>
   );

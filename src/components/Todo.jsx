@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
+const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
   const [modifytask, setModifytask] = useState(task);
   const [modifycomplete, setModifycomplete] = useState(complete);
   const [isClicked, setIsClicked] = useState(false);
@@ -9,10 +9,10 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
   // --- MODIFY A TASK ---
   const handleModifyTask = (e) => {
     e.preventDefault();
-    const modifyTaskForm = { task: modifytask, complete: modifycomplete }; // donner id ?
+    const modifyTaskForm = { task: modifytask, complete: modifycomplete };
     console.log("modifyTaskForm : " + modifyTaskForm);
     axios
-      .put("http://localhost:8000/todo/" + id, modifyTaskForm) // patch ?
+      .put("http://localhost:8000/todo/" + id, modifyTaskForm)
       .then(() => {
         console.log("update done");
         setIsClicked(false);
@@ -27,13 +27,13 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
       .catch((e) => console.log(e));
   };
 
-  // --- MODIFY COMPLETE ---
+  // --- MODIFY 'COMPLETE OR NOT'  ---
   const handleModifyComplete = (e) => {
     e.preventDefault();
-    const modifyCompleteForm = { complete: !modifycomplete, task: modifytask }; // donner id ?
+    const modifyCompleteForm = { complete: !modifycomplete, task: modifytask };
     console.log("modifyTaskForm : " + modifyCompleteForm);
     axios
-      .put("http://localhost:8000/todo/" + id, modifyCompleteForm) // patch ?
+      .put("http://localhost:8000/todo/" + id, modifyCompleteForm)
       .then(() => {
         console.log("update ok");
         setModifycomplete(!modifycomplete);
@@ -50,7 +50,6 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
 
   return (
     <div className="post-it">
-      {/* className={complete ? " post-it strike" : "post-it"} */}
       <div>
         {isClicked ? (
           <form className="form-modify" onSubmit={handleModifyTask}>
@@ -80,7 +79,9 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
           className="buttons-todo button-modify-task"
           onClick={() => setIsClicked(!isClicked)}
         >
-          🖌
+          <span>
+            <i className="fa-solid fa-pencil"></i>
+          </span>
         </button>
 
         <button
@@ -103,7 +104,9 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
               deleteTask(id);
           }}
         >
-          🗑
+          <span>
+            <i className="fa-solid fa-trash-can"></i>
+          </span>
         </button>
       </div>
     </div>
@@ -111,7 +114,3 @@ const Todo = ({ task, complete, id, deleteTask, tasks, setTasks }) => {
 };
 
 export default Todo;
-
-// TEST 2 Warning: ReactDOM.render is no longer supported in React 18.
-//Use createRoot instead. Until you switch to the new API,
-//your app will behave as if it's running React 17.

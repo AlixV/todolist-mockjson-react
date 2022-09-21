@@ -4,7 +4,7 @@ import Todo from "./Todo";
 const TodoList = ({ tasks, setTasks, deleteTask }) => {
   return (
     <>
-      <h2> My tasks : </h2>
+      <h2> MY TASKS : </h2>
 
       {tasks.length > 0 ? (
         <div className="post-it-list">
@@ -16,14 +16,13 @@ const TodoList = ({ tasks, setTasks, deleteTask }) => {
                 complete={onetask.complete}
                 id={onetask.id}
                 deleteTask={deleteTask}
-                tasks={tasks}
                 setTasks={setTasks}
               />
             );
           })}
         </div>
       ) : (
-        <p> No task, well done </p>
+        <p> No task, well done ! </p>
       )}
     </>
   );
