@@ -1,17 +1,17 @@
 ## Front-end React app
 
-To run the app :
-npm run start
+To run the app :<br/>
+npm run start<br/>
 npm run server
 
 ## Make a to-do list
 
-With a mock JSON
--> I choose json-server package
+With a mock JSON <br/>
+-> I choose json-server package<br/>
 
 API
 
-GET
-POST
-DELETE
-PUT
+GET <br/>
+POST<br/>
+DELETE<br/>
+PUT<br/>
