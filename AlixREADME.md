@@ -20,7 +20,7 @@ Alix to-do :<br/>
 
 <ul>
 <li>A task = button to modify</li>
-<li></li>
+<li> hover pointer</li>
 </ul>
 
 <!-- <li></li> -->
