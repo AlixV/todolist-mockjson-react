@@ -8,7 +8,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTaskForm = { task: newTask, complete };
-    console.log(newTaskForm);
+    // console.log(newTaskForm);
     axios
       .post("http://localhost:8000/todo", newTaskForm)
       .then((res) => {
@@ -26,7 +26,7 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
       <form className="form-create" onSubmit={handleSubmit}>
         {error !== "" && <p>{error}</p>}
         <textarea
-          className="textarea-form-create"
+          // className="textarea-form-create"
           id="task"
           name="task"
           type="textarea"
@@ -39,7 +39,6 @@ const Form = ({ newTask, setNewTask, complete, setComplete }) => {
 
         <div className="form-create-radio-and-legend">
           <legend>already done ?</legend>
-
           <div className="form-create-radio">
             <input
               className="form-create-radio-input"

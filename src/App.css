@@ -89,6 +89,7 @@ h2{
   position :relative;
 }
 
+
 .container-buttons-todo{
   position : absolute;
   bottom:0px;
@@ -129,6 +130,7 @@ h2{
 }
 
 .form-modify > textarea {
+  /* border: none; */
   border-color: #03187C;
   font-family:Verdana, Arial, Tahoma, sans-serif;
 }

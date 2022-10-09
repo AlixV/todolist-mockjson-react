@@ -1,8 +1,8 @@
 {
   "todo": [
     {
+      "complete": false,
       "task": "Eat bananas",
-      "complete": true,
       "id": 1
     },
     {

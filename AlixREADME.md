@@ -15,3 +15,12 @@ GET <br/>
 POST<br/>
 DELETE<br/>
 PUT<br/>
+
+Alix to-do :<br/>
+
+<ul>
+<li>A task = button to modify</li>
+<li></li>
+</ul>
+
+<!-- <li></li> -->
