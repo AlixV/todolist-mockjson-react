@@ -72,21 +72,19 @@ const Todo = ({ task, complete, id, deleteTask, setTasks }) => {
             </button>
           </form>
         ) : (
-          // Display task and if 'complete' is true => strike
-          <p className={complete ? "strike" : ""}> {task}</p>
+          // DISPLAY TASK (if 'complete' is true => strike on it)
+          // The displayed task is an onClick.
+          // It will trigger textarea (to modify the task).
+          <p
+            className={complete ? "strike" : ""}
+            onClick={() => setIsClicked(!isClicked)}
+          >
+            {" "}
+            {task}
+          </p>
         )}
       </div>
-
       <div className="container-buttons-todo">
-        <button // Icon pencil to trigger textarea (to modify the task).
-          className="buttons-todo button-modify-task"
-          onClick={() => setIsClicked(!isClicked)}
-        >
-          <span className="icon-post-it">
-            <i className="fa-solid fa-pencil"></i>
-          </span>
-        </button>
-
         <button // Inverse state to show if task is complete or not.
           className="buttons-todo button-modify-complete"
           onClick={(e) => handleModifyComplete(e)}

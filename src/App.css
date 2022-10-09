@@ -75,7 +75,7 @@ h2{
 
 }
 
-/* --- TO DO --- */
+/* --- TODO --- */
 
 .post-it{
   border-radius: 0px 0px 10px 0px;
@@ -89,6 +89,9 @@ h2{
   position :relative;
 }
 
+.post-it > p{
+cursor: pointer;
+}
 
 .container-buttons-todo{
   position : absolute;

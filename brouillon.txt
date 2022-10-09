@@ -194,7 +194,7 @@ fetchTaskes()
 //     </div>
 //   );
 
-
+-------------------------------------------------------
 --- TODOLIST --- 
 
  {/* // <button onClick={() => updateTask(task.id)}>complete</button>  */}
@@ -251,6 +251,35 @@ fetchTaskes()
 //       .then(()=> console.log("delete successful"))
 //       .catch((e)=> console.log(e))
 //   } 
+
+
+-------------------------------------------------------
+Todo.jsx
+
+Modification de la tache en cliquant sur le texte dans 
+le post it pour faire apparaîte le textarera
+-> Ancienne version avec un icon en form de crayon 
+pour faire apparaîte le textarera, puis modifier   :
+
+ {/* 
+Previous one :
+          // DISPLAY task and if 'complete' is true => strike
+          <p className={complete ? "strike" : ""}> {task}</p>
+        )}
+      </div>
+
+      <div className="container-buttons-todo">
+        <button // Icon pencil. Trigger textarea (to modify the task).
+          className="buttons-todo button-modify-task"
+          onClick={() => setIsClicked(!isClicked)} // GARDER QUE ÇA
+        >
+          <span className="icon-post-it">
+            <i className="fa-solid fa-pencil"></i>
+          </span>
+        </button>
+         */}
+
+-------------------------------------------------------
  
 
 
