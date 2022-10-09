@@ -48,6 +48,9 @@ i {
   background:#2c0b8e ;
   color: #fff
 }
+.form-create-radio-input{
+  cursor: pointer;
+}
 
 legend{
   color: #03187C;
@@ -103,6 +106,8 @@ cursor: pointer;
   background-color:white;
   border : none;
   margin: 2px;
+  cursor: pointer;
+
 }
 
 .strike{
