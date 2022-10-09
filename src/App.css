@@ -29,6 +29,7 @@ i {
 .form-create > textarea{
   border: 4px dotted #03187C;
   font-family:Verdana, Arial, Tahoma, sans-serif;
+  resize: none;
 }
 
 .form-create > button{
@@ -140,6 +141,9 @@ cursor: pointer;
 .form-modify > textarea {
   /* border: none; */
   border-color: #03187C;
+  background-color: rgba(255, 0, 0, 0.1);;
+  resize: none;
+  border-radius: 4px;
   font-family:Verdana, Arial, Tahoma, sans-serif;
 }
 
